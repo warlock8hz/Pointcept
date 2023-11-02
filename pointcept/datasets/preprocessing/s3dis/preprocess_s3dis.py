@@ -132,6 +132,25 @@ def parse_room(
         save_dict["normal"] = room_normals
     torch.save(save_dict, save_path)
 
+    # save a txt file for visualization
+    save_visual_path = save_path + ".txt"
+    with open(save_visual_path, "w") as f:
+        for i in range(save_dict["coord"].shape[0]):
+            f.write(
+                "{} {} {} {} {} {} {} {}\n".format(
+                    save_dict["coord"][i, 0],
+                    save_dict["coord"][i, 1],
+                    save_dict["coord"][i, 2],
+                    save_dict["color"][i, 0],
+                    save_dict["color"][i, 1],
+                    save_dict["color"][i, 2],
+                    save_dict["semantic_gt"][i, 0],
+                    save_dict["instance_gt"][i, 0]
+                )
+            )
+
+    print("done")
+
 
 def main_process():
     parser = argparse.ArgumentParser()
