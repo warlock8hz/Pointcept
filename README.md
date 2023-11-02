@@ -120,11 +120,16 @@ conda create -n pointcept python=3.8 -y
 conda activate pointcept
 conda install ninja -y
 # Choose version you want here: https://pytorch.org/get-started/previous-versions/
-conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch -y
+# conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch -y
+conda install cudatoolkit=11.7 -c nvidia
+conda install pytorch=1.13.1 torchvision=0.14.1 torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 conda install h5py pyyaml -c anaconda -y
 conda install sharedarray tensorboard tensorboardx yapf addict einops scipy plyfile termcolor timm -c conda-forge -y
-conda install pytorch-cluster pytorch-scatter pytorch-sparse -c pyg -y
+#conda install pytorch-cluster pytorch-scatter pytorch-sparse -c pyg -y
+conda install pytorch-sparse -c pyg -y
 pip install torch-geometric
+pip install torch-cluster
+pip install torch-scatter
 
 # spconv (SparseUNet)
 # refer https://github.com/traveller59/spconv
