@@ -24,7 +24,7 @@ param_dicts = None  # example: param_dicts = [dict(keyword="block", lr_scale=0.1
 hooks = [
     dict(type="CheckpointLoader"),
     dict(type="IterationTimer", warmup_iter=2),
-    dict(type="InformationWriter"),
+    #dict(type="InformationWriter"), # comment out to reduce visual output and log file size
     dict(type="SemSegEvaluator"),
     dict(type="CheckpointSaver", save_freq=None),
     dict(type="PreciseEvaluator", test_last=False),

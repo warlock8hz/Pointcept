@@ -156,12 +156,13 @@ class SemSegEvaluator(HookBase):
             )
             if "origin_coord" in input_dict.keys():
                 info = "Interp. " + info
-            self.trainer.logger.info(
-                info
-                + "Loss {loss:.4f} ".format(
-                    iter=i + 1, max_iter=len(self.trainer.val_loader), loss=loss.item()
-                )
-            )
+            # comment out to reduce visual output and log file size
+            #self.trainer.logger.info(
+            #    info
+            #    + "Loss {loss:.4f} ".format(
+            #        iter=i + 1, max_iter=len(self.trainer.val_loader), loss=loss.item()
+            #    )
+            #)
         loss_avg = self.trainer.storage.history("val_loss").avg
         intersection = self.trainer.storage.history("val_intersection").total
         union = self.trainer.storage.history("val_union").total
