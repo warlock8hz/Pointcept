@@ -10,6 +10,7 @@ from .structure3d import Structured3DDataset
 # outdoor scene
 from .semantic_kitti import SemanticKITTIDataset
 from .nuscenes import NuScenesDataset
+from .wsduu import wsduuDataset
 
 # object
 from .modelnet import ModelNetDataset
