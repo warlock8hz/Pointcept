@@ -133,7 +133,7 @@ pip install torch-scatter
 
 # spconv (SparseUNet)
 # refer https://github.com/traveller59/spconv
-pip install spconv-cu113
+pip install spconv-cu117
 
 # PTv1 & PTv2 or precise eval
 cd libs/pointops
