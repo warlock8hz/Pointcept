@@ -18,7 +18,8 @@ model = dict(
     ),
     criteria=[
         dict(type="CrossEntropyLoss",
-             weight=[4.50672, 54327.9, 36.7055, 2232.02, 197.532, 1, 1.395, 16.2681, 72.2194, 5.95649],
+             weight=[4.675239693, 608.424339, 44.62459015, 28.90909571, 151.9649079,
+                     1.682339124, 1.544148977, 19.26700787, 45.96351924, 6.89030398],
              loss_weight=1.0, ignore_index=-1),
         dict(type="LovaszLoss", mode="multiclass", loss_weight=1.0, ignore_index=-1),
     ],
@@ -89,7 +90,7 @@ data = dict(
             # dict(type="RandomColorDrop", p=0.2, color_augment=0.0),
             dict(
                 type="GridSample",
-                grid_size=0.02,
+                grid_size=0.01,
                 hash_type="fnv",
                 mode="train",
                 return_discrete_coord=True,
@@ -115,7 +116,7 @@ data = dict(
             dict(type="CenterShift", apply_z=True),
             dict(
                 type="GridSample",
-                grid_size=0.02,
+                grid_size=0.01,
                 hash_type="fnv",
                 mode="train",
                 return_discrete_coord=True,
@@ -144,7 +145,7 @@ data = dict(
         test_cfg=dict(
             voxelize=dict(
                 type="GridSample",
-                grid_size=0.02,
+                grid_size=0.01,
                 hash_type="fnv",
                 mode="test",
                 return_discrete_coord=True,

@@ -244,6 +244,7 @@ class Trainer(TrainerBase):
             worker_init_fn=init_fn,
             drop_last=True,
             persistent_workers=True,
+            # timeout=2, # no need to change (unit: sec)
         )
         return train_loader
 
